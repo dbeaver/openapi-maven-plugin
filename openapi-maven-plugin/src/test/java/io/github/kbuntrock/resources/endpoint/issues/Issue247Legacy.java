@@ -1,6 +1,6 @@
 package io.github.kbuntrock.resources.endpoint.issues;
 
-import io.swagger.v3.oas.annotations.Parameter;
+import org.jkiss.code.rest.annotation.Parameter;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

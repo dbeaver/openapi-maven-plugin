@@ -1,10 +1,10 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
-import io.swagger.v3.oas.annotations.media.Schema;
+import org.jkiss.code.rest.annotation.Operation;
+import org.jkiss.code.rest.annotation.Parameter;
+import org.jkiss.code.rest.annotation.Parameters;
+import org.jkiss.code.rest.annotation.enums.ParameterIn;
+import org.jkiss.code.rest.annotation.media.Schema;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;

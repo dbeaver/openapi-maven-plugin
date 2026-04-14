@@ -9,6 +9,7 @@ import io.github.kbuntrock.context.ApiContext;
 import io.github.kbuntrock.model.Tag;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotation;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotations;
+import io.github.kbuntrock.utils.OpenApiAnnotationSupport;
 import io.github.kbuntrock.utils.OpenApiTypeResolver;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
@@ -134,7 +135,7 @@ public class JavaClassAnalyser {
 		final MergedAnnotations mergedAnnotations = context.getMergeAnnotationsHelper().from(clazz);
 
 		// Read Swagger @Tag annotation (optional) for name/description overrides.
-		MergedAnnotation swaggerTag = mergedAnnotations.get("io.swagger.v3.oas.annotations.tags.Tag");
+		MergedAnnotation swaggerTag = OpenApiAnnotationSupport.getTag(mergedAnnotations);
 		if(swaggerTag.isPresent()) {
 			final String tagName = swaggerTag.getString("name");
 			if(!StringUtils.isEmpty(tagName)) {

@@ -17,6 +17,7 @@ import io.github.kbuntrock.model.Flow;
 import io.github.kbuntrock.reflection.BeanDefinition;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotation;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotations;
+import io.github.kbuntrock.utils.OpenApiAnnotationSupport;
 import io.github.kbuntrock.utils.OpenApiConstants;
 import io.github.kbuntrock.utils.OpenApiResolvedType;
 import io.github.kbuntrock.utils.UnwrappingType;
@@ -140,7 +141,7 @@ public class Schema {
 		}
 		// Swagger annotation on the class
 		MergedAnnotations mergedClassAnnotations = context.getMergeAnnotationsHelper().from(dataObject.getJavaClass());
-		final MergedAnnotation classSchemaAnnotation = mergedClassAnnotations.get("io.swagger.v3.oas.annotations.media.Schema");
+		final MergedAnnotation classSchemaAnnotation = OpenApiAnnotationSupport.getSchema(mergedClassAnnotations);
 		if(classSchemaAnnotation.isPresent()) {
 			String swaggerDescription = classSchemaAnnotation.getString("description");
 			if(!StringUtils.isEmpty(swaggerDescription)) {
@@ -336,8 +337,7 @@ public class Schema {
 	}
 
 	private static void setPropertyDescriptionFromSwaggerAnnotation(MergedAnnotations mergedAnnotations, Property property) {
-		final MergedAnnotation schemaAnnotation = mergedAnnotations
-			.get("io.swagger.v3.oas.annotations.media.Schema");
+		final MergedAnnotation schemaAnnotation = OpenApiAnnotationSupport.getSchema(mergedAnnotations);
 		if(schemaAnnotation.isPresent()) {
 			String swaggerDescription = schemaAnnotation.getString("description");
 			if(!StringUtils.isEmpty(swaggerDescription)) {

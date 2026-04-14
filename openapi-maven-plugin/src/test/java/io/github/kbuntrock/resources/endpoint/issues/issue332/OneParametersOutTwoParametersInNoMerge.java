@@ -1,12 +1,12 @@
 package io.github.kbuntrock.resources.endpoint.issues.issue332;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.enums.Explode;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
-import io.swagger.v3.oas.annotations.enums.ParameterStyle;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
-import io.swagger.v3.oas.annotations.media.Schema;
+import org.jkiss.code.rest.annotation.Operation;
+import org.jkiss.code.rest.annotation.Parameter;
+import org.jkiss.code.rest.annotation.enums.Explode;
+import org.jkiss.code.rest.annotation.enums.ParameterIn;
+import org.jkiss.code.rest.annotation.enums.ParameterStyle;
+import org.jkiss.code.rest.annotation.media.ArraySchema;
+import org.jkiss.code.rest.annotation.media.Schema;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

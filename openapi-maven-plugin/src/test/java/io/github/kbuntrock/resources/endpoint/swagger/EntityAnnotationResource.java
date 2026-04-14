@@ -1,9 +1,9 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.jkiss.code.rest.annotation.Operation;
+import org.jkiss.code.rest.annotation.media.Content;
+import org.jkiss.code.rest.annotation.media.Schema;
+import org.jkiss.code.rest.annotation.responses.ApiResponse;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import org.springframework.http.ResponseEntity;

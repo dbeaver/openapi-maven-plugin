@@ -1,6 +1,6 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import org.jkiss.code.rest.annotation.media.Schema;
 
 import java.time.LocalDateTime;
 
