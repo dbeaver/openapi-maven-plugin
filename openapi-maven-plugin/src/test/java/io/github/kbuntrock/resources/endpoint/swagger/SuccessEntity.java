@@ -1,6 +1,6 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import org.jkiss.code.rest.annotation.media.Schema;
+import io.cloudbeaver.model.api.annotation.media.Schema;
 
 @Schema(description = "The success entity", example = "A John Doe user")
 public class SuccessEntity {

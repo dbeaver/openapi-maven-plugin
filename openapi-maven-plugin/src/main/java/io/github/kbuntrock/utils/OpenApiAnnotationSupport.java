@@ -5,11 +5,11 @@ import io.github.kbuntrock.reflection.annotation.MergedAnnotations;
 
 public final class OpenApiAnnotationSupport {
 
-	private static final String OPERATION = "org.jkiss.code.rest.annotation.Operation";
-	private static final String PARAMETER = "org.jkiss.code.rest.annotation.Parameter";
-	private static final String PARAMETERS = "org.jkiss.code.rest.annotation.Parameters";
-	private static final String SCHEMA = "org.jkiss.code.rest.annotation.media.Schema";
-	private static final String TAG = "org.jkiss.code.rest.annotation.tags.Tag";
+	private static final String OPERATION = "io.cloudbeaver.model.api.annotation.Operation";
+	private static final String PARAMETER = "io.cloudbeaver.model.api.annotation.Parameter";
+	private static final String PARAMETERS = "io.cloudbeaver.model.api.annotation.Parameters";
+	private static final String SCHEMA = "io.cloudbeaver.model.api.annotation.media.Schema";
+	private static final String TAG = "io.cloudbeaver.model.api.annotation.tags.Tag";
 
 	private OpenApiAnnotationSupport() {
 	}

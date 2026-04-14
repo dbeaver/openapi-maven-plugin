@@ -1,6 +1,6 @@
 package io.github.kbuntrock.resources.endpoint.issues;
 
-import org.jkiss.code.rest.annotation.Parameter;
+import io.cloudbeaver.model.api.annotation.Parameter;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

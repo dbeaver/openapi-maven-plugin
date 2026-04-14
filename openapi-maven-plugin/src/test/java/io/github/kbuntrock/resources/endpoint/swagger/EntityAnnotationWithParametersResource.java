@@ -1,10 +1,10 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import org.jkiss.code.rest.annotation.Operation;
-import org.jkiss.code.rest.annotation.Parameter;
-import org.jkiss.code.rest.annotation.Parameters;
-import org.jkiss.code.rest.annotation.enums.ParameterIn;
-import org.jkiss.code.rest.annotation.media.Schema;
+import io.cloudbeaver.model.api.annotation.Operation;
+import io.cloudbeaver.model.api.annotation.Parameter;
+import io.cloudbeaver.model.api.annotation.Parameters;
+import io.cloudbeaver.model.api.annotation.enums.ParameterIn;
+import io.cloudbeaver.model.api.annotation.media.Schema;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
