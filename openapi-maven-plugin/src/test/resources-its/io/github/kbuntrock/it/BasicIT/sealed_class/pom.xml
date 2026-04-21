@@ -47,8 +47,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>io.github.kbuntrock</groupId>
-                <artifactId>openapi-maven-plugin</artifactId>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi-plugin-project-version}</version>
                 <configuration>
                     <analytics>false</analytics>
