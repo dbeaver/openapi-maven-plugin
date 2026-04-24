@@ -14,7 +14,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <openapi-plugin-project-version>0.0.31-SNAPSHOT</openapi-plugin-project-version>
+        <openapi-plugin-project-version>0.0.31-dbeaver</openapi-plugin-project-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -48,8 +48,8 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>io.github.kbuntrock</groupId>
-                <artifactId>openapi-maven-plugin</artifactId>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi-plugin-project-version}</version>
                 <configuration>
                     <analytics>false</analytics>

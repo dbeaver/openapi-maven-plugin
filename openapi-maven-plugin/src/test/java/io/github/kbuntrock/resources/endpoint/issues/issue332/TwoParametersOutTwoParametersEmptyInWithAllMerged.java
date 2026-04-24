@@ -1,10 +1,10 @@
 package io.github.kbuntrock.resources.endpoint.issues.issue332;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.cloudbeaver.model.api.annotation.Operation;
+import io.cloudbeaver.model.api.annotation.Parameter;
+import io.cloudbeaver.model.api.annotation.enums.ParameterIn;
+import io.cloudbeaver.model.api.annotation.media.ArraySchema;
+import io.cloudbeaver.model.api.annotation.media.Schema;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

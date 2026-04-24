@@ -8,6 +8,7 @@ import io.github.kbuntrock.model.annotation.OperationResponse;
 import io.github.kbuntrock.reflection.GenericityResolver;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotation;
 import io.github.kbuntrock.reflection.annotation.MergedAnnotations;
+import io.github.kbuntrock.utils.OpenApiAnnotationSupport;
 import io.github.kbuntrock.utils.OpenApiTypeResolver;
 import io.github.kbuntrock.utils.ParameterLocation;
 import io.github.kbuntrock.utils.UnwrappingType;
@@ -170,7 +171,7 @@ public abstract class AbstractLibraryReader {
 	protected void setSwaggerAnnotatedEndpointProperties(final Endpoint endpoint, final MergedAnnotations mergedAnnotations) {
 		ArrayList<ParameterObject> parameterObjects = new ArrayList<ParameterObject>();
 
-		final MergedAnnotation operationAnnotation = mergedAnnotations.get("io.swagger.v3.oas.annotations.Operation");
+		final MergedAnnotation operationAnnotation = OpenApiAnnotationSupport.getOperation(mergedAnnotations);
 		if(operationAnnotation.isPresent()) {
 			OperationAnnotationInfo operationInfo = endpoint.getOperationAnnotationInfo();
 			final String operationId = operationAnnotation.getString("operationId");
@@ -235,12 +236,12 @@ public abstract class AbstractLibraryReader {
 			}
 		}
 
-		final MergedAnnotation parametersAnnotation = mergedAnnotations.get("io.swagger.v3.oas.annotations.Parameters");
+		final MergedAnnotation parametersAnnotation = OpenApiAnnotationSupport.getParameters(mergedAnnotations);
 		if(parametersAnnotation.isPresent()) {
 			MergedAnnotation[] parametersArray = parametersAnnotation.getAnnotationArray("value");
 			addParameters(parameterObjects, parametersArray);
 		} else {
-			final MergedAnnotation parameterAnnotation = mergedAnnotations.get("io.swagger.v3.oas.annotations.Parameter");
+			final MergedAnnotation parameterAnnotation = OpenApiAnnotationSupport.getParameter(mergedAnnotations);
 			if(parameterAnnotation.isPresent()) {
 				parameterObjects.add(buildParameter(parameterAnnotation));
 			}
@@ -297,7 +298,7 @@ public abstract class AbstractLibraryReader {
 
 	protected void setSwaggerAnnotatedParameterProperties(final Parameter javaParameter,
 		final MergedAnnotations mergedAnnotations, ParameterObject parameter) {
-		MergedAnnotation parameterAnn = mergedAnnotations.get("io.swagger.v3.oas.annotations.Parameter");
+		MergedAnnotation parameterAnn = OpenApiAnnotationSupport.getParameter(mergedAnnotations);
 		if(parameterAnn.isPresent()) {
 			setSwaggerAnnotationPropertiesOnParameter(parameter, parameterAnn);
 		}

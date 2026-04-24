@@ -1,6 +1,6 @@
 package io.github.kbuntrock.resources.endpoint.issues;
 
-import io.swagger.v3.oas.annotations.Parameter;
+import io.cloudbeaver.model.api.annotation.Parameter;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedModel;
 import org.springframework.http.ResponseEntity;

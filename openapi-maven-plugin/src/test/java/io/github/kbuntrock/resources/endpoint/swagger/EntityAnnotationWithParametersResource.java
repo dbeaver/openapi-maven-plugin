@@ -1,10 +1,10 @@
 package io.github.kbuntrock.resources.endpoint.swagger;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.cloudbeaver.model.api.annotation.Operation;
+import io.cloudbeaver.model.api.annotation.Parameter;
+import io.cloudbeaver.model.api.annotation.Parameters;
+import io.cloudbeaver.model.api.annotation.enums.ParameterIn;
+import io.cloudbeaver.model.api.annotation.media.Schema;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
