@@ -25,6 +25,9 @@ public class Operation {
 	@JsonProperty("x-operation-name")
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String loopbackOperationName;
+	@JsonProperty("x-badges")
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	private List<Map<String, String>> badges;
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String description;
 	@JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,5 +120,13 @@ public class Operation {
 
 	public void setLoopbackOperationName(final String loopbackOperationName) {
 		this.loopbackOperationName = loopbackOperationName;
+	}
+
+	public List<Map<String, String>> getBadges() {
+		return badges;
+	}
+
+	public void setBadges(final List<Map<String, String>> badges) {
+		this.badges = badges;
 	}
 }

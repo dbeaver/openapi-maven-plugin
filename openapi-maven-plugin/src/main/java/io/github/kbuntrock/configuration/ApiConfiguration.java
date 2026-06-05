@@ -68,6 +68,8 @@ public class ApiConfiguration extends CommonApiConfiguration {
 		merged.pathPrefix = copy.pathPrefix;
 		merged.fileFormat = copy.fileFormat;
 		merged.loopbackOperationName = copy.loopbackOperationName;
+		merged.badges = copy.badges;
+		merged.badgeColor = copy.badgeColor;
 		merged.enumListDescriptionEnabled = copy.enumListDescriptionEnabled;
 		merged.enumNameExtensionEnabled = copy.enumNameExtensionEnabled;
 		merged.enumNameExtensionValue = copy.enumNameExtensionValue;
@@ -126,6 +128,12 @@ public class ApiConfiguration extends CommonApiConfiguration {
 		}
 		if(loopbackOperationName != null) {
 			merged.setLoopbackOperationName(loopbackOperationName);
+		}
+		if(badges != null) {
+			merged.setBadges(badges);
+		}
+		if(badgeColor != null) {
+			merged.setBadgeColor(badgeColor);
 		}
 		if(enumListDescriptionEnabled != null) {
 			merged.setEnumListDescriptionEnabled(enumListDescriptionEnabled);
