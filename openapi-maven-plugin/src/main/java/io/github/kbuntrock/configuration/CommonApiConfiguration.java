@@ -72,6 +72,18 @@ public class CommonApiConfiguration {
 	protected Boolean loopbackOperationName;
 
 	/**
+	 * If true, expose the operationId as an "x-badges" extension on every operation.
+	 */
+	@Parameter
+	protected Boolean badges;
+
+	/**
+	 * Color used for the generated x-badges entry. Defaults "grey"
+	 */
+	@Parameter
+	protected String badgeColor;
+
+	/**
 	 * Write in the description the complete list of enum value / description
 	 */
 	@Parameter
@@ -171,6 +183,8 @@ public class CommonApiConfiguration {
 		this.pathPrefix = commonApiConfiguration.pathPrefix;
 		this.fileFormat = commonApiConfiguration.fileFormat;
 		this.loopbackOperationName = commonApiConfiguration.loopbackOperationName;
+		this.badges = commonApiConfiguration.badges;
+		this.badgeColor = commonApiConfiguration.badgeColor;
 		this.enumListDescriptionEnabled = commonApiConfiguration.enumListDescriptionEnabled;
 		this.enumNameExtensionEnabled = commonApiConfiguration.enumNameExtensionEnabled;
 		this.enumNameExtensionValue = commonApiConfiguration.enumNameExtensionValue;
@@ -230,6 +244,12 @@ public class CommonApiConfiguration {
 		}
 		if(loopbackOperationName == null) {
 			loopbackOperationName = true;
+		}
+		if(badges == null) {
+			badges = false;
+		}
+		if(badgeColor == null) {
+			badgeColor = "grey";
 		}
 		if(enumListDescriptionEnabled == null) {
 			enumListDescriptionEnabled = true;
@@ -344,6 +364,22 @@ public class CommonApiConfiguration {
 
 	public void setLoopbackOperationName(final boolean loopbackOperationName) {
 		this.loopbackOperationName = loopbackOperationName;
+	}
+
+	public boolean isBadges() {
+		return badges != null && badges;
+	}
+
+	public void setBadges(final boolean badges) {
+		this.badges = badges;
+	}
+
+	public String getBadgeColor() {
+		return badgeColor;
+	}
+
+	public void setBadgeColor(final String badgeColor) {
+		this.badgeColor = badgeColor;
 	}
 
 	public Boolean getEnumListDescriptionEnabled() {

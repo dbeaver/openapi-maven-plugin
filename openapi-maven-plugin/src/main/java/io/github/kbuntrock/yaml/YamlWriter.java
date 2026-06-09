@@ -280,6 +280,15 @@ public class YamlWriter {
 					operation.setOperationId(operation.getOperationId() + nbEncounteredOperationId);
 				}
 
+				if(apiConfiguration.isBadges()) {
+					Map<String, String> badge = new LinkedHashMap<>();
+					badge.put("name", operation.getOperationId());
+					badge.put("color", apiConfiguration.getBadgeColor());
+					List<Map<String, String>> badgeList = new ArrayList<>();
+					badgeList.add(badge);
+					operation.setBadges(badgeList);
+				}
+
 				// -------------------------
 				// ----- PARAMETERS part----
 				// -------------------------
